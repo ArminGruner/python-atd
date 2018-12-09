@@ -56,7 +56,7 @@ def at(command, when, queue = 'a'):
         check_past = True
     elif isinstance(when, datetime.timedelta):
         timespec = convert_timedelta(when)
-        when = datetime.datetime.now() + when
+        when = datetime.datetime.utcnow() + when
         check_past = True
     elif isinstance(when, str):
         timespec = when # TODO: Validate timespec?
@@ -65,7 +65,7 @@ def at(command, when, queue = 'a'):
                 'ed to schedule(). Try the builtin datetime.')
 
     if check_past:
-        if (when < datetime.datetime.now()):
+        if (when < datetime.datetime.utcnow()):
             raise ValueError('`when` must be at a time in the future, never in'+
                 ' the past')
 
