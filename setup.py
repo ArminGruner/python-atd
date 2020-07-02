@@ -5,7 +5,7 @@ from setuptools import setup
   #      return f.read()
 
 setup(name='python-atd',
-      version='0.1',
+      version='0.2',
       description='Unix `at` scheduler in Python 2. Supports atq, atd, & atrm',
       keywords='atq atrm atd at',
       #long_description=readme(),
